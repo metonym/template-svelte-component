@@ -1,0 +1,48 @@
+{
+  "name": "template-svelte-component",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "Template for building Svelte components",
+  "author": "Eric Liu (https://github.com/metonym)",
+  "svelte": "src/App.svelte",
+  "module": "lib/index.mjs",
+  "main": "lib/index.js",
+  "scripts": {
+    "develop": "rollup -cw",
+    "build": "rollup -c",
+    "lint": "tslint --fix -p . -c tslint.json",
+    "test": "jest --coverage",
+    "test:tdd": "jest --watch"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "husky": "^3.0.5",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1",
+    "rollup": "^1.20.3",
+    "rollup-plugin-node-resolve": "^5.1.0",
+    "rollup-plugin-svelte": "^5.0.3",
+    "rollup-plugin-typescript2": "^0.24.0",
+    "svelte": "^3.9.2",
+    "tslint": "^5.19.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.6.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint && pretty-quick --staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  }
+}
