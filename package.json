@@ -10,7 +10,7 @@
   "scripts": {
     "develop": "rollup -cw",
     "build": "rollup -c",
-    "lint": "tslint --fix -p . -c tslint.json",
+    "lint": "tslint --fix -p .",
     "test": "jest --coverage",
     "test:tdd": "jest --watch"
   },
