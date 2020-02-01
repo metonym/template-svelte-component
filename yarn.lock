@@ -4617,10 +4617,10 @@ supports-color@^7.1.0:
   dependencies:
     has-flag "^4.0.0"
 
-svelte@^3.16.7:
-  version "3.16.7"
-  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.16.7.tgz#9ade80a4bbbac95595c676dd817222f632fa2c07"
-  integrity sha512-egrva1UklB1n7KAv179IhDpQzMGAvubJUlOQ9PitmmZmAfrCUEgrQnx2vPxn2s+mGV3aYegXvJ/yQ35N2SfnYQ==
+svelte@^3.18.1:
+  version "3.18.1"
+  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.18.1.tgz#db0f82cc46394ca8c9a9d183995e1ebfeea3bdd0"
+  integrity sha512-jl6VLGTytOjHu700LuXSX6LvwRKFLAxqT8McUD2f3NjMI6qakWXgXoVjT+/ZmXmr8DiwrN/074pA1o3Aye4bIA==
 
 symbol-tree@^3.2.2:
   version "3.2.4"
