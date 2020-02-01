@@ -33,7 +33,7 @@
     "rollup-plugin-typescript2": "^0.25.2",
     "svelte": "^3.16.7",
     "ts-jest": "^24.2.0",
-    "tslint": "^5.20.1",
+    "tslint": "^6.0.0",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.7.4"
   },
