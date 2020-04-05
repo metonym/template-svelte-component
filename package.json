@@ -11,7 +11,7 @@
   "scripts": {
     "prepublishOnly": "rollup -c",
     "build": "rollup -c",
-    "postbuild": "prettier --write '{src}/**/*.{js,svelte}'"
+    "postbuild": "prettier --write '**/*.{js,svelte}'"
   },
   "devDependencies": {
     "prettier": "1.19.1",

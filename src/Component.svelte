@@ -1,5 +1,5 @@
 <script>
-  let name = 'world';
+  let name = "world";
   let count = 1;
 
   function increment() {
@@ -7,4 +7,4 @@
   }
 </script>
 
-<h1 on:click="{increment}">Hello {name} {count}!</h1>
+<h1 on:click={increment}>Hello {name} {count}!</h1>
