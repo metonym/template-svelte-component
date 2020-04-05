@@ -1,10 +1,18 @@
 # template-svelte-component
 
+<!--
+[![NPM][npm]][npm-url]
+[![Build][build]][build-badge]
+-->
+
 > Template for building Svelte components.
 
-Description of the component.
+This is a minimal template for building and documenting Svelte components.
 
-## Getting started
+- **Rollup** is used to build the component for ES/UMD formats.
+- **Sapper** is used for component development and documentation (demo deployed using GitHub Pages). See the [demo](demo) folder.
+
+## Install
 
 ```bash
 yarn add -D template-svelte-component
@@ -22,6 +30,17 @@ yarn add -D template-svelte-component
 
 ## API
 
+| Property name | Value                                    |
+| ------------- | ---------------------------------------- |
+| class         | `string` (default: 'default-class-name') |
+
+## [Changelog](CHANGELOG.md)
+
 ## License
 
 [MIT](LICENSE)
+
+[npm]: https://img.shields.io/npm/v/template-svelte-component.svg?color=blue
+[npm-url]: https://npmjs.com/package/template-svelte-component
+[build]: https://travis-ci.com/metonym/template-svelte-component.svg?branch=master
+[build-badge]: https://travis-ci.com/metonym/template-svelte-component
