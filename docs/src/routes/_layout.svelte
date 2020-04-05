@@ -2,7 +2,12 @@
   :global(*) {
     margin: 0;
     padding: 0;
-    border-box: box-sizing;
+    box-sizing: border-box;
+  }
+
+  :global(body) {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+      "Open Sans", "Helvetica Neue", sans-serif;
   }
 
   main {
@@ -10,7 +15,6 @@
     max-width: 56rem;
     padding: 2em;
     margin: 0 auto;
-    box-sizing: border-box;
   }
 </style>
 

@@ -3,17 +3,19 @@
   "private": true,
   "scripts": {
     "develop": "sapper dev",
-    "build": "sapper export"
+    "build": "sapper export",
+    "deploy": "node gh-pages"
   },
   "dependencies": {
     "polka": "next",
     "sirv": "^0.4.0"
   },
   "devDependencies": {
+    "gh-pages": "^2.2.0",
     "sapper": "^0.27.0",
     "svelte": "^3.0.0",
     "svelte-loader": "^2.9.0",
-    "webpack": "^4.7.0",
-    "template-svelte-component": "../"
+    "template-svelte-component": "../",
+    "webpack": "^4.7.0"
   }
 }

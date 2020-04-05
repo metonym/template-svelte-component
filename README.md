@@ -2,27 +2,25 @@
 
 > Template for building Svelte components.
 
-## Overview
+Description of the component.
 
-### Develop
-
-This command builds the project in watch mode. The source (i.e. entry) is in `src`, which is outputted in the designated folder `lib`.
+## Getting started
 
 ```bash
-yarn develop
+yarn add -D template-svelte-component
 ```
 
-### Build
+## Usage
 
-This command first removes the `lib` folder before building the project.
+```html
+<script>
+  import Component from "template-svelte-component";
+</script>
 
-```bash
-yarn build
+<Component />
 ```
 
-## Linting, formatting and committing
-
-To ensure that committed code follows conventions, this project uses `prettier`, `tslint` and git hooks (via `husky`) to automate the linting and formatting of code and commit messages.
+## API
 
 ## License
 

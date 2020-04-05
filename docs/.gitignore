@@ -1,4 +1,5 @@
+__sapper__
 .DS_Store
 **/node_modules
-__sapper__
-yarn-error.log
+yarn-debug.log*
+yarn-error.log*
