@@ -1,1 +1,1 @@
-require("gh-pages").publish("__sapper__/export", function() {});
+require("gh-pages").publish("build", function() {});
