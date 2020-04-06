@@ -10,19 +10,13 @@
   "sideEffects": false,
   "scripts": {
     "prepublishOnly": "rollup -c",
-    "build": "rollup -c",
-    "postbuild": "prettier --write '**/*.{js,svelte}'"
+    "build": "rollup -c"
   },
   "devDependencies": {
-    "prettier": "1.19.1",
-    "prettier-plugin-svelte": "0.7.0",
     "rollup": "^2.3.3",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "^5.2.1",
     "svelte": "^3.20.1"
-  },
-  "prettier": {
-    "printWidth": 100
   },
   "repository": {
     "type": "git",
