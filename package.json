@@ -9,9 +9,8 @@
   "module": "lib/index.mjs",
   "sideEffects": false,
   "scripts": {
-    "prepublishOnly": "rollup -c",
     "build": "rollup -c",
-    "postbuild": "prettier --write '**/*.{js,svelte}'"
+    "prepublishOnly": "rollup -c && prettier --write 'src/**/*.{js,svelte}'"
   },
   "devDependencies": {
     "prettier": "1.19.1",
