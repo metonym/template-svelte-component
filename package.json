@@ -1,6 +1,6 @@
 {
   "name": "template-svelte-component",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "description": "Template for building Svelte components",
   "author": "Eric Liu (https://github.com/metonym)",
