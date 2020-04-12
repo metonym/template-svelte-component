@@ -1,24 +1,21 @@
 {
+  "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server",
-    "build": "NODE_ENV=production webpack",
+    "develop": "sapper dev",
+    "build": "sapper export --basepath template-svelte-component",
     "deploy": "node gh-pages"
   },
+  "dependencies": {
+    "polka": "next",
+    "sirv": "^0.4.0"
+  },
   "devDependencies": {
-    "clean-webpack-plugin": "^3.0.0",
-    "css-loader": "^3.4.2",
+    "@metonym/sapper": "^0.27.12",
     "gh-pages": "^2.2.0",
-    "html-inline-css-webpack-plugin": "^1.8.0",
-    "html-webpack-plugin": "^4.0.4",
-    "mini-css-extract-plugin": "^0.9.0",
-    "optimize-css-assets-webpack-plugin": "^5.0.3",
-    "style-loader": "^1.1.3",
-    "svelte": "^3.20.1",
-    "template-svelte-component": "../",
-    "svelte-loader": "^2.13.6",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "svelte": "^3.0.0",
+    "svelte-loader": "^2.9.0",
+    "webpack": "^4.7.0",
+    "template-svelte-component": "../"
   }
 }

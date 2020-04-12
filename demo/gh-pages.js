@@ -1,1 +1,1 @@
-require("gh-pages").publish("build", function() {});
+require("gh-pages").publish("public/template-svelte-component");

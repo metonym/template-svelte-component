@@ -1,44 +1,68 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require("webpack");
 const path = require("path");
-const HTMLInlineCSSWebpackPlugin = require("html-inline-css-webpack-plugin").default;
+const config = require("@metonym/sapper/config/webpack.js");
+const pkg = require("./package.json");
 
-const NODE_ENV = process.env.NODE_ENV || "development";
-const IS_PROD = NODE_ENV === "production";
+const mode = process.env.NODE_ENV || "production";
+const dev = mode === "development";
+
+const alias = {
+  svelte: path.resolve("node_modules", "svelte"),
+  sapper: path.resolve("node_modules", "@metonym/sapper"),
+};
+const extensions = [".mjs", ".js", ".json", ".svelte", ".html"];
+const mainFields = ["svelte", "module", "browser", "main"];
 
 module.exports = {
-  stats: "errors-only",
-  mode: NODE_ENV,
-  devtool: IS_PROD ? false : "cheap-eval-source-map",
-  entry: { bundle: ["./src/index.js"] },
-  resolve: {
-    alias: { svelte: path.resolve("node_modules", "svelte") },
-    extensions: [".mjs", ".js", ".svelte"],
-    mainFields: ["svelte", "browser", "module", "main"]
+  client: {
+    entry: config.client.entry(),
+    output: config.client.output(),
+    resolve: { alias, extensions, mainFields },
+    module: {
+      rules: [
+        {
+          test: /\.(svelte|html)$/,
+          use: {
+            loader: "svelte-loader",
+            options: {
+              dev,
+              hydratable: true,
+              hotReload: false, // pending https://github.com/sveltejs/svelte/issues/2377
+            },
+          },
+        },
+      ],
+    },
+    mode,
+    plugins: [
+      // pending https://github.com/sveltejs/svelte/issues/2377
+      // dev && new webpack.HotModuleReplacementPlugin(),
+      new webpack.DefinePlugin({
+        "process.browser": true,
+        "process.env.NODE_ENV": JSON.stringify(mode),
+      }),
+    ].filter(Boolean),
+    devtool: dev && "inline-source-map",
   },
-  output: { path: `${__dirname}/build`, filename: "[name].[chunkhash].js" },
-  module: {
-    rules: [
-      {
-        test: /\.svelte$/,
-        use: {
-          loader: "svelte-loader",
-          options: { emitCss: true, hotReload: true }
-        }
-      },
-      {
-        test: /\.css$/,
-        use: [IS_PROD ? MiniCssExtractPlugin.loader : "style-loader", "css-loader"]
-      }
-    ]
+
+  server: {
+    entry: config.server.entry(),
+    output: config.server.output(),
+    target: "node",
+    resolve: { alias, extensions, mainFields },
+    externals: Object.keys(pkg.dependencies).concat("encoding"),
+    module: {
+      rules: [
+        {
+          test: /\.(svelte|html)$/,
+          use: {
+            loader: "svelte-loader",
+            options: { css: false, generate: "ssr", dev },
+          },
+        },
+      ],
+    },
+    mode,
+    performance: { hints: false },
   },
-  plugins: [
-    new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({ filename: "[name].[chunkhash].css" }),
-    new OptimizeCssAssetsPlugin({}),
-    new HtmlWebpackPlugin({ template: "public/index.html" }),
-    new HTMLInlineCSSWebpackPlugin()
-  ]
 };
