@@ -31,8 +31,18 @@ yarn add -D template-svelte-component
 ## API
 
 | Property name | Value                                    |
-| ------------- | ---------------------------------------- |
+| :------------ | :--------------------------------------- |
 | class         | `string` (default: 'default-class-name') |
+
+## Forwarded events
+
+- on:click
+- on:mouseover
+- on:mouseenter
+- on:mouseout
+- on:focus
+- on:blur
+- on:keydown
 
 ## [Changelog](CHANGELOG.md)
 
