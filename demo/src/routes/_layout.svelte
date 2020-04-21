@@ -5,12 +5,16 @@
     box-sizing: border-box;
   }
 
+  :global(html) {
+    line-height: 1.42;
+  }
+
   :global(body) {
     font-family: "Public Sans", sans-serif;
     font-weight: 500;
-    overflow-y: scroll;
     letter-spacing: 0.01rem;
     color: #161616;
+    overflow-y: scroll;
   }
 
   main {
