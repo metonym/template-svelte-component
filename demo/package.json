@@ -1,5 +1,4 @@
 {
-  "version": "0.0.1",
   "private": true,
   "scripts": {
     "develop": "sapper dev",
@@ -7,14 +6,14 @@
     "deploy": "node gh-pages"
   },
   "dependencies": {
-    "polka": "next",
-    "sirv": "^0.4.0"
+    "polka": "next"
   },
   "devDependencies": {
     "@metonym/sapper": "^0.27.12",
     "gh-pages": "^2.2.0",
-    "svelte": "^3.0.0",
+    "svelte": "^3.20.0",
     "svelte-loader": "^2.9.0",
+    "svelte-primer": "^0.1.0-rc.4",
     "template-svelte-component": "../",
     "webpack": "^4.43.0"
   }
